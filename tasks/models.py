@@ -1,6 +1,10 @@
 from django.db import models
 from uuid import uuid4
-from django.contrib.auth.models import User
+
+
+class User(models.Model):
+    name = models.CharField(max_length=200)
+    email = models.EmailField(max_length=200, unique=True)
 
 
 class Task(models.Model):
