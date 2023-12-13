@@ -4,7 +4,10 @@ from uuid import uuid4
 
 class User(models.Model):
     name = models.CharField(max_length=200)
-    email = models.EmailField(max_length=200, unique=True)
+    email = models.EmailField(max_length=200)
+
+    def __str__(self) -> str:
+        return self.name
 
 
 class Task(models.Model):
